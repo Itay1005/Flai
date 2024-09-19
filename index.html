@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משחק הציפור</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #87CEEB;
+        }
+        #bird {
+            width: 100px; /* גודל התמונה */
+        }
+    </style>
+</head>
+<body>
+    <h1>בחר תמונה ושם</h1>
+    <input type="text" id="nameInput" placeholder="שם בעברית">
+    <input type="url" id="imageInput" placeholder="URL של התמונה">
+    <button onclick="startGame()">התחל משחק</button>
+    <div id="game" style="display: none;">
+        <img id="bird" src="" alt="Bird">
+    </div>
+    <script>
+        function startGame() {
+            const name = document.getElementById("nameInput").value;
+            const imageUrl = document.getElementById("imageInput").value;
+            document.title = name; // שים את השם בכותרת
+            document.getElementById("bird").src = imageUrl;
+            document.getElementById("game").style.display = "block";
+            // הוסף לוגיקת משחק כאן (קפיצים וצינורות)
+        }
+    </script>
+</body>
+</html>
